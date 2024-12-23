@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1732013818 source:/home/alireza/Desktop/DATA_STRUCTURES/Project2/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

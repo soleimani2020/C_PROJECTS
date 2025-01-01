@@ -5,6 +5,7 @@
 *******************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 char board[3][3];
 #define EMPTY ' '
@@ -52,9 +53,9 @@ void DisplayBoard(){
 void Player_Switch(){
 
     if (current_player == 'X'){
-        current_player == 'O';
+        current_player = 'O';
     } else {
-        current_player == 'X';
+        current_player = 'X';
     }
 }
 
@@ -95,16 +96,60 @@ int CheckDraw() {
 
 
 
+void PlayGame(){
+    int m,n;
+    while(1){
+        DisplayBoard();
+        printf("Player %c, please make the move!\n",current_player);
+        printf("Please enter the row:\n");
+        scanf("%d",&m);
+        printf("Please enter the column:\n");
+        scanf("%d",&n);
 
+
+
+        if (m >= 3 || n >= 3 ){
+            printf("This is not a valid move!\n");
+            continue;
+        }
+
+        if (board[m][n] !=  EMPTY){
+            printf("This is not a valid move!\n");
+            continue;
+        }
+
+        board[m][n]= current_player;
+
+        if (CheckWinningMoves()){
+            DisplayBoard();
+            printf("The player %c has won the game !\n",current_player);
+            break;
+        }
+        else if (CheckDraw()){
+            DisplayBoard();
+            printf("It was a draw!\n");
+            break;
+        }
+        Player_Switch();
+
+
+    }
+}
 
 int main()
 {
+    printf("Hey, Welcome to the game !\n");
+    printf("Let's first initialize the board game together!\n");
     InitializeBoard();
-    DisplayBoard();
-    WinningMoves();
-
-
+    PlayGame();
+    printf("The end of the game !\n");
     return 0;
+
+
 }
+
+
+
+
 
 

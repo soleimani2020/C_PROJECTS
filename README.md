@@ -3,7 +3,7 @@ This is an implementation of the Happy Number algorithm using Floyd's Tortoise a
 
 1. Calculation:
 Purpose: This function calculates the sum of the squares of the digits of a number. It performs one iteration of transforming a number into the next value in the sequence.
-Logic://
+Logic:
 Extract the digits of the number using the modulo operator % 10.
 Square each digit and add it to the cumulative sum.
 Remove the last digit of the number by integer division by 10.

@@ -2,7 +2,6 @@ A Happy Number is a number where repeatedly replacing the number with the sum of
 This is an implementation of the Happy Number algorithm using Floyd's Tortoise and Hare cycle detection algorithm. 
 
 1. Calculation:
-
 Purpose: This function calculates the sum of the squares of the digits of a number. It performs one iteration of transforming a number into the next value in the sequence.
 Logic:
 Extract the digits of the number using the modulo operator % 10.
